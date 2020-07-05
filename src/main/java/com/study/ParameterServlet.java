@@ -7,9 +7,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.text.MessageFormat;
 import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.Map;
 
 public class ParameterServlet extends HttpServlet {
+//    getParameter and getParameterValues
+//http://localhost:8080/ServletTest/ParameterServlet?userid=15&username=zz&userpass=123456&sex=%E7%94%B7&dept=god&inst=basketball,sing,rap&note=%E6%B3%A8%E6%84%8F%E6%80%81%E5%BA%A6!&hiddenField=money
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
@@ -42,6 +45,7 @@ public class ParameterServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
+        //    getParameterMap
 //request对象封装的参数是以Map的形式存储的
         request.setCharacterEncoding("UTF-8");
         Map<String, String[]> paramMap = request.getParameterMap();
@@ -60,5 +64,15 @@ public class ParameterServlet extends HttpServlet {
             System.out.println(MessageFormat.format("{0}={1}", paramName,
                     paramValue));
         }
+
+//        getPatameterNames
+//        request.setCharacterEncoding("UTF-8");
+//// Enumeration接口中定义了一些方法，通过这些方法可以枚举（一次获得一个）对象集合中的元素
+//        Enumeration<String> paramNames = request.getParameterNames();//获取所有的参数名
+//        while (paramNames.hasMoreElements()) {
+//        String name = paramNames.nextElement();//得到参数名
+//        String value = request.getParameter(name);//通过参数名获取对应的值
+//        System.out.println(MessageFormat.format("{0}={1}", name,value));
+//        }
     }
 }
