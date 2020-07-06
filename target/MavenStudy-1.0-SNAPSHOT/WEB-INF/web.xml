@@ -121,4 +121,11 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
   <session-config>
     <session-timeout>15</session-timeout>
   </session-config>
+
+<!--  errorpage-->
+  <error-page>
+    <error-code>500</error-code>
+    <exception-type>java.lang.NullPointerException</exception-type>
+    <location>/error.jsp</location>
+  </error-page>
 </web-app>
