@@ -12,6 +12,7 @@
 </head>
 <body>
     <%=request.getAttribute("msg")%>
+    <%=request.getAttribute("message")%>
 <%--    隐藏表单域--%>
     <input type="hidden" name="session" value="1234">
 </body>
